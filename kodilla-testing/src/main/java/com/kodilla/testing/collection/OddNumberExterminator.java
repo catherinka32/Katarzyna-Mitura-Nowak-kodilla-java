@@ -5,10 +5,10 @@ import java.util.ArrayList;
 /**
  * Created by Mitura on 2017-07-14.
  */
-class OddNumbersExterminator{
+class OddNumberExterminator {
     ArrayList<Integer> evenNumbers;
 
-    public OddNumbersExterminator(){
+    public OddNumberExterminator(){
         evenNumbers = new ArrayList<Integer>();
     }
     public ArrayList<Integer> exterminate(ArrayList<Integer> numbers){

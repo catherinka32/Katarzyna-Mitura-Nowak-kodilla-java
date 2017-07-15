@@ -28,7 +28,7 @@ public class CollectionTestSuit {
     public void testOddNumbersExterminatorEmptyList(){
             //Given
             ArrayList<Integer> numbersList = new ArrayList<Integer>();
-            OddNumbersExterminator oddExterminator = new OddNumbersExterminator();
+            OddNumberExterminator oddExterminator = new OddNumberExterminator();
             ArrayList<Integer> myList = new ArrayList<Integer>();
             //When
             ArrayList<Integer> result = oddExterminator.exterminate(numbersList);
@@ -50,7 +50,7 @@ public class CollectionTestSuit {
             numbersList.add(15);
             numbersList.add(74);
             numbersList.add(68);
-            OddNumbersExterminator oddExterminator = new OddNumbersExterminator();
+            OddNumberExterminator oddExterminator = new OddNumberExterminator();
             ArrayList<Integer> myList = new ArrayList<Integer>();
             myList.add(10);
             myList.add(8);
