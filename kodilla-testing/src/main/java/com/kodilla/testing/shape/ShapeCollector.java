@@ -26,9 +26,9 @@ public class ShapeCollector {
         return result;
     }
     public String showFigures() {
-        String result = null;
+        String result = "";
         for (int n = 0; n < figures.size(); n++) {
-            result = "This is" + figures.get(n).getFigureName() + ", its field amounts " + figures.get(n).getField()+"\n";
+            result = result + "This is " + figures.get(n).getFigureName() + ", its field amounts " + figures.get(n).getField()+"\n";
         }
         return result;
     }

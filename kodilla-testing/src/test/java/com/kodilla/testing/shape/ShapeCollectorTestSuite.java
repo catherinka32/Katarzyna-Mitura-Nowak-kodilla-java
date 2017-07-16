@@ -55,10 +55,11 @@ public class ShapeCollectorTestSuite {
         figureCollector.addFigure(square);
         //When
         boolean result;
-        result = figureCollector.showFigures().contains("This is circle, its field amounts 22.0");
+        result = figureCollector.showFigures().contains("This is circle, its field amounts 153.93804002589985");
         result = result && figureCollector.showFigures().contains("This is triangle, its field amounts 4.0");
         result = result && figureCollector.showFigures().contains("This is square,  its field amounts 16");
         //Then
+        System.out.println(figureCollector.showFigures());
         Assert.assertTrue(result);
     }
 }
