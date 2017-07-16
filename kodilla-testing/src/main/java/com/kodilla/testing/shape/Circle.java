@@ -10,10 +10,10 @@ public class Circle extends Figure implements Shape{
         this.radius = radius;
     }
 
-    String getFigureName() {
+    public String getFigureName() {
         return "Circle";
     }
-    double getField() {
-        return PI;
+    public double getField() {
+        return Math.PI * radius * radius;
     }
 }

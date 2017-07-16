@@ -15,6 +15,7 @@ public class ForumComment {
     }
 
     public ForumPost getForumPost() {
+
         return forumPost;
     }
 

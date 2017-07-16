@@ -3,11 +3,11 @@ package com.kodilla.testing.shape;
 /**
  * Created by Mitura on 2017-07-15.
  */
-public class Figure implements Shape {
-    String getFigureName() {
+abstract class Figure implements Shape {
+    public String getFigureName() {
         return "";
     }
-    double getField(){
+    public double getField(){
         return 0;
     }
 }
