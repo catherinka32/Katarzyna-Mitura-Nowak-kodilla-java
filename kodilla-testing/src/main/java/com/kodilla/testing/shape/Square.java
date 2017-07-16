@@ -11,7 +11,7 @@ public class Square extends Figure implements Shape{
     }
 
     public String getFigureName() {
-        return "Square";
+        return "square";
     }
     public double getField() {
         return side * side;

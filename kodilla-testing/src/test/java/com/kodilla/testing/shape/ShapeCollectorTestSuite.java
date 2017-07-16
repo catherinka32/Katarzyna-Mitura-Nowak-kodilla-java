@@ -57,7 +57,7 @@ public class ShapeCollectorTestSuite {
         boolean result;
         result = figureCollector.showFigures().contains("This is circle, its field amounts 22.0");
         result = result && figureCollector.showFigures().contains("This is triangle, its field amounts 4.0");
-        result = result && figureCollector.showFigures().contains("This is square,  its field amounts: 16");
+        result = result && figureCollector.showFigures().contains("This is square,  its field amounts 16");
         //Then
         Assert.assertTrue(result);
     }

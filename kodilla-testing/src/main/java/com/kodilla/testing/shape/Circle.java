@@ -11,7 +11,7 @@ public class Circle extends Figure implements Shape{
     }
 
     public String getFigureName() {
-        return "Circle";
+        return "circle";
     }
     public double getField() {
         return Math.PI * radius * radius;

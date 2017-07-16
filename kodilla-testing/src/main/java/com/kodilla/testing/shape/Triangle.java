@@ -13,7 +13,7 @@ public class Triangle extends Figure implements Shape {
     }
 
     public String getFigureName() {
-        return "Triangle";
+        return "triangle";
     }
     public double getField(){
         return 0.5 * base * height;
