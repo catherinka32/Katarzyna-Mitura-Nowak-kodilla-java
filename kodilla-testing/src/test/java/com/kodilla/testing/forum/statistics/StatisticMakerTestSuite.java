@@ -26,8 +26,8 @@ public class StatisticMakerTestSuite {
         nameList.add("Kasia");
         nameList.add("Jurek");
 
-        int comments = 20;
-        int posts = 400;
+        int comments = 400;
+        int posts = 20;
 
         when(statisticsMock.usersNames()).thenReturn(nameList);
         when(statisticsMock.commentsCount()).thenReturn(comments);
@@ -35,9 +35,19 @@ public class StatisticMakerTestSuite {
 
         StatisticMaker statisticMaker = new StatisticMaker(statisticsMock);
         //When
-        System.out.println(statisticMaker.getAmountOfUsers());
-        int result = statisticMaker.getAmountOfUsers();
+        statisticMaker.calculateAdvStatistics();
+        int result1 = statisticMaker.getAmountOfUsers();
+        int result2 = statisticMaker.getAmountOfPosts();
+        int result3 = statisticMaker.getAmountOfComment();
+        double result4 = statisticMaker.getAvarageCommentPerUser();
+        double result5 = statisticMaker.getAvaragePostPerUser();
+        double result6 = statisticMaker.getAverageCommentPerPost();
         //Then
-        Assert.assertEquals(5, result);
+        Assert.assertEquals(5, result1);
+        Assert.assertEquals(20,result2);
+        Assert.assertEquals(400,result3);
+        Assert.assertEquals(80.0, result4, 0.01);
+        Assert.assertEquals(4.0,result5,0.01);
+        Assert.assertEquals(20.0,result6,0.01);
     }
 }

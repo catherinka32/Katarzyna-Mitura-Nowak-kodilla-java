@@ -54,13 +54,13 @@ public class StatisticMaker{
     public StatisticMaker(Statistics statistics) {
         this.statistics = statistics;
     }
-    public void calculateAdvStatistics(Statistics statistics){
-        int amountOfUsers = statistics.usersNames().size();
-        int amountOfPosts = statistics.postsCount();
-        int amountOfComment = statistics.commentsCount();
-        double avaragePostPerUser = amountOfPosts/amountOfUsers;
-        double avarageCommentPerUser = amountOfComment/amountOfUsers;
-        double averageCommentPerPost = amountOfComment/amountOfPosts;
+    public void calculateAdvStatistics(){
+        amountOfUsers = statistics.usersNames().size();
+        amountOfPosts = statistics.postsCount();
+        amountOfComment = statistics.commentsCount();
+        avaragePostPerUser = amountOfPosts/amountOfUsers;
+        avarageCommentPerUser = amountOfComment/amountOfUsers;
+        averageCommentPerPost = amountOfComment/amountOfPosts;
 
     }
 }
