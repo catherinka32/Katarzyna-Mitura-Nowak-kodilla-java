@@ -1,12 +1,7 @@
 package com.kodilla.testing.forum.statistics;
-
-import com.sun.org.apache.xpath.internal.SourceTree;
-import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.ArrayList;
-
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
