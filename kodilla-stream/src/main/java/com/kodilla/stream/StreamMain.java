@@ -4,6 +4,7 @@ package com.kodilla.stream;
  * Created by Iga on 23.07.2017.
  */
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
@@ -29,5 +30,8 @@ public class StreamMain {
         poemBeautifier.beautify("I don't know what I'm doing now",(string) -> "ABC " + string + " ABC" );
         poemBeautifier.beautify("I don't know what I'm doing now",(string) -> string.substring(7 , 17) );
         poemBeautifier.beautify("I don't know what I'm doing now",(string) -> string.concat("hfkhkdtd") );
+
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
     }
 }
