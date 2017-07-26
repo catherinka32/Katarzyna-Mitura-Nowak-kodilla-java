@@ -1,10 +1,6 @@
 package com.kodilla.stream;
-
-import com.kodilla.stream.book.Book;
-import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.forum.Forum;
 import com.kodilla.stream.forum.ForumUser;
-
 import java.util.Map;
 import java.util.stream.Collectors;
 
