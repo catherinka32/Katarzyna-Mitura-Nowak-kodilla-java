@@ -1,53 +1,76 @@
 package com.kodilla.stream.forum;
 
-import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-/**
- * Created by Iga on 26.07.2017.
- */
 public final class ForumUser {
     private final String username;
-    private final int userID;
-    private final char sex;
-    private final int numberOfPosts;
-    private final LocalDate birthDate;
+    private final String realname;
+    private final String location;
+    private final Set<ForumUser> friends = new HashSet<>();
 
-    public ForumUser(String username, int userID, char sex, int numberOfPosts, int yearOfBirth, int monthOfBirth, int dayOfBirth ) {
+    public ForumUser(String username, String realname, String location) {
         this.username = username;
-        this.userID = userID;
-        this.sex = sex;
-        this.numberOfPosts = numberOfPosts;
-        this.birthDate = LocalDate.of(yearOfBirth, monthOfBirth, dayOfBirth);
+        this.realname = realname;
+        this.location = location;
     }
-
+    public void addFriend(ForumUser user){
+        friends.add(user);
+    }
+    public boolean removeFriend(ForumUser user){
+        return friends.remove(user);
+    }
     public String getUsername() {
         return username;
     }
 
-    public int getUserID() {
-        return userID;
+    public String getRealname() {
+        return realname;
     }
 
-    public char getSex() {
-        return sex;
+    public String getLocation() {
+        return location;
     }
 
-    public int getNumberOfPosts() {
-        return numberOfPosts;
+    public Set<ForumUser> getFriends() {
+        return friends;
     }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public Set<String> getLocationsOfFriends(){
+        return friends.stream()
+                .map(friend -> friend.getLocation())
+                .collect(Collectors.toSet());
+    }
+    public Set<String> getLocationsOfFriendsOfFriends() {
+        return friends.stream()
+                .flatMap(user -> user.getFriends().stream())
+                .filter(user -> user != this)
+                .map(ForumUser::getLocation)
+                .collect(Collectors.toSet());
     }
 
     @Override
     public String toString() {
         return "ForumUser{" +
                 "username='" + username + '\'' +
-                ", userID=" + userID +
-                ", sex=" + sex +
-                ", numberOfPosts=" + numberOfPosts +
-                ", birthDate=" + birthDate +
+                ", realname='" + realname + '\'' +
+                ", location='" + location + '\'' +
+                ", friends=" + friends +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ForumUser)) return false;
+
+        ForumUser forumUser = (ForumUser) o;
+
+        return username.equals(forumUser.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return username.hashCode();
     }
 }
