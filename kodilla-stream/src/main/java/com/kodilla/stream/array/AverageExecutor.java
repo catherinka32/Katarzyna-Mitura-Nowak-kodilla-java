@@ -8,16 +8,16 @@ public class AverageExecutor implements ArrayOperation{
     public AverageExecutor(int[] numbers) {
         this.numbers = numbers;
     }
-
     public double getAverage(int[] numbers){
-        double average =0;
+       double average = 0;
         IntStream.range(0,numbers.length)
                 .map(n -> numbers[n])
                 .forEach(System.out::println);
 
-        IntStream.range(0, numbers.length)
+        average = IntStream.range(0, numbers.length)
                 .map(n -> numbers[n])
-                .average();
+                .average()
+                .orElse(0.0);
         return average;
     }
 }
