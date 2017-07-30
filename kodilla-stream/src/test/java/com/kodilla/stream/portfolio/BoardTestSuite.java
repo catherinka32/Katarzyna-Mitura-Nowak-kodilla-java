@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 
 import static java.util.stream.Collectors.toList;
 
@@ -141,17 +142,14 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        double avarageWorkingOnTask = project.getTaskLists().stream()
+        double averageWorkingOnTask = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(t -> LocalDate.now().toEpochDay() - t.getCreated().toEpochDay())
-                .mapToInt(t -> Integer.valueOf(t))
-                .average();
-
-
-
-
+                .mapToInt(t -> t.intValue())
+                .average()
+                .orElse(0.0);
         //Then
+        Assert.assertEquals(10.0, averageWorkingOnTask,0.0);
     }
-
 }
