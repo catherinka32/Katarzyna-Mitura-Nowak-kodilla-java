@@ -11,7 +11,7 @@ public class FirstChallenge {
 
         FirstChallenge firstChallenge = new FirstChallenge();
         try{
-            double result = firstChallenge.divide(12.0, 0.0);
+            double result = firstChallenge.divide(12.0, 3.0);
             System.out.println("Result is: " + result);
         }catch(ArithmeticException e ){
             System.out.println("Remember: don't divide by zero!!!");
