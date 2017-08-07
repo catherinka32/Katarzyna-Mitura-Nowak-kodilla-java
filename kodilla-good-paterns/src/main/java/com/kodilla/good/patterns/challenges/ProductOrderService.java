@@ -12,12 +12,12 @@ public class ProductOrderService {
     }
     public OrderDto process (final OrderRequest orderRequest){
         boolean isOrdered = orderService.order(orderRequest.getUser(),orderRequest.getProduct(), orderRequest.getQuantity());
-                if(isOrdered){
-                    informationService.inform(orderRequest.getUser());
-                    orderRepository.createOrder(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getQuantity());
-                    return new OrderDto(orderRequest.getUser(),true);
-                }else{
-                    return new OrderDto(orderRequest.getUser(), false);
+        if(isOrdered){
+            informationService.inform(orderRequest.getUser());
+            orderRepository.createOrder(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getQuantity());
+            return new OrderDto(orderRequest.getUser(),true);
+        }else{
+            return new OrderDto(orderRequest.getUser(), false);
         }
     }
 }
