@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.FoodToDoor;
 
 public  class PurchaseRequestRetriever {
-public PurchaseRequest retrieve(){
+public PurchaseRequest retrieve() {
     User user = new User ("Kate", "Fantastic");
     Producer producer = new GlutenFreeShop();
     Product product = new Product("Gluten free ice-cream");

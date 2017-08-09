@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.FoodToDoor;
 
-public class PurchaseRequest{
+public class PurchaseRequest {
     public User user;
     public Producer producer;
     public Product product;
