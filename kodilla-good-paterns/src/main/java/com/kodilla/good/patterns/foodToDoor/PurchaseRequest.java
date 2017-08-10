@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.FoodToDoor;
+package com.kodilla.good.patterns.foodToDoor;
 
 public class PurchaseRequest {
     public User user;

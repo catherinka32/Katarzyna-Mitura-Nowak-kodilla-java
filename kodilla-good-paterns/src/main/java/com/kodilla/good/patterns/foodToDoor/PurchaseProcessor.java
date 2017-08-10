@@ -1,9 +1,8 @@
-package com.kodilla.good.patterns.FoodToDoor;
+package com.kodilla.good.patterns.foodToDoor;
 
 public class PurchaseProcessor {
 
-
-    public PurchaseDto mainProcess(final PurchaseRequest purchaseRequest) {
+public PurchaseDto mainProcess(final PurchaseRequest purchaseRequest) {
         boolean isPurchased = purchaseRequest.getProducer().process();
         if (isPurchased) {
             System.out.println("I'm sending e-mail to the " + purchaseRequest.getUser().getName()+ purchaseRequest.getUser().getSurname());
