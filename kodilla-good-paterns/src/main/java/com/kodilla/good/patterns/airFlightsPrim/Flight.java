@@ -1,9 +1,9 @@
 package com.kodilla.good.patterns.airFlightsPrim;
 
 public class Flight {
-    String DeparturePlace;
-    String ArrivalPlace;
-    String numberOfFlight;
+    private String DeparturePlace;
+    private String ArrivalPlace;
+    private String numberOfFlight;
 
     public Flight(String departurePlace, String arrivalPlace, String numberOfFlight) {
         DeparturePlace = departurePlace;
