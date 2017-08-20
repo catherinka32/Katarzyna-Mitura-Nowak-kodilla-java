@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class BoardConfig {
-    @Autowired
+    /*@Autowired
     @Qualifier("list1")
     TaskList toDoList;
     @Autowired
@@ -15,7 +15,7 @@ public class BoardConfig {
     TaskList inProgressList;
     @Autowired
     @Qualifier ("list3")
-    TaskList doneList;
+    TaskList doneList;*/
 
     @Bean(name = "list1")
     @Scope("prototype")
