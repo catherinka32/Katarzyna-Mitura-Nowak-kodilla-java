@@ -1,4 +1,5 @@
-/*package com.kodilla.spring.porfolio;
+package com.kodilla.spring.porfolio;
+
 
 import java.util.List;
 
@@ -12,7 +13,9 @@ public class Board {
         this.inProgressList = inProgressList;
         this.doneList = doneList;
     }
-
+    public void present() {
+        System.out.println("Presenting: " + toDoList.getList() + ", " + inProgressList.getList() + ", " + doneList.getList());
+    }
     /*public TaskList getToDoList() {
         return toDoList;
     }
@@ -23,9 +26,8 @@ public class Board {
 
     public TaskList getDoneList() {
         return doneList;
-    }
-    public void present(){
-        System.out.println("Presenting: " + toDoList.getTasks()+ ", " + inProgressList.getTasks() + ", " + doneList.getTasks()) ;
-    }
-}*?
+    }*/
+
+}
+
 
