@@ -5,19 +5,16 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class LoggerTestSuite {
-    @BeforeClass
-    public static void testLog() {
-        Logger.getInstance().log("firstLog");
-    }
 
     @Test
     public void testGetLastLog() {
         //Given
+        Logger.getInstance().log("log1");
         //When
         String result = Logger.getInstance().getLastLog();
-        System.out.println("Current log: " + result);
+        System.out.println("Last log is: " + result);
         //Then
-        Assert.assertEquals("firstLog", result);
+        Assert.assertEquals("log1", result);
     }
 }
 
