@@ -27,6 +27,7 @@ public class BoardTestSuite {
 
         Board board1 = context.getBean(Board.class);//pobieramy z kontenera beana typu Board
         System.out.println(board1);
+
         TaskList toDoList = board1.getToDoList();
         toDoList.getTasks().add("First task to do");
 

@@ -1,6 +1,4 @@
 package com.kodilla.spring.porfolio;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -35,7 +33,7 @@ public class BoardConfig {
         return new TaskList();
     }
 
-    @Bean (name = "bord")
+    @Bean (name = "board")
     public Board getBoard(){
         return new Board(getTasksFirst(), getTasksSecond(), getTasksThird());
     }

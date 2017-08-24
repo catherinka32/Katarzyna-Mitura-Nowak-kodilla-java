@@ -2,13 +2,12 @@ package com.kodilla.spring.porfolio;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class Board {
     private TaskList toDoList;
     private TaskList inProgressList;
     private TaskList doneList;
-    public Board(@Qualifier("list1") TaskList toDoList, @Qualifier("list2")TaskList inProgressList, @Qualifier("list3")
-            TaskList doneList) {
+    public Board( TaskList toDoList, TaskList inProgressList, TaskList doneList) {
         this.toDoList = toDoList;
         this.inProgressList = inProgressList;
         this.doneList = doneList;
