@@ -13,8 +13,10 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("Driving people", drivingTask.getTaskName());
         Assert.assertEquals("DrivingTask is in progress", drivingTask.executeTask());
+        Assert.assertFalse(drivingTask.isTaskExecuted());
         System.out.println("Name of task: " + drivingTask.getTaskName());
         System.out.println(drivingTask.executeTask());
+        System.out.println("Task is executed:" + drivingTask.isTaskExecuted());
     }
     @Test
     public void testFactoryPainting(){
@@ -25,7 +27,10 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("Painting", paintingTask.getTaskName());
         Assert.assertEquals("PaintingTask is in progress", paintingTask.executeTask());
-
+        Assert.assertFalse(paintingTask.isTaskExecuted());
+        System.out.println("Name of task: " + paintingTask.getTaskName());
+        System.out.println(paintingTask.executeTask());
+        System.out.println("Task is executed:" + paintingTask.isTaskExecuted());
     }
     @Test
     public void testFactoryShopping(){
@@ -36,5 +41,10 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("Shopping", shoppingTask.getTaskName());
         Assert.assertEquals("ShoppingTask is in progress", shoppingTask.executeTask());
+        Assert.assertFalse(shoppingTask.isTaskExecuted());
+        System.out.println("Name of task: " + shoppingTask.getTaskName());
+        System.out.println(shoppingTask.executeTask());
+        System.out.println("Task is executed:" + shoppingTask.isTaskExecuted());
+
     }
 }
