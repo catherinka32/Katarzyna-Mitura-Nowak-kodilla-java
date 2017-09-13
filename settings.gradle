@@ -5,4 +5,10 @@ include 'kodilla-good-paterns'
 include 'kodilla-paterns'
 include 'kodilla-patterns'
 include 'kodilla-jdbc'
+include 'kodilla-hibernate'
+include 'kodilla-spring'
+include 'kodilla-spring-web'
+include 'kodilla-spring-into'
+
+
 
