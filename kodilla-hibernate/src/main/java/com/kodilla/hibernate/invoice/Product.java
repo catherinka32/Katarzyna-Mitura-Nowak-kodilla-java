@@ -40,7 +40,7 @@ public class Product {
         this.name = name;
     }
     @OneToMany(targetEntity = Item.class, mappedBy = "product",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-
+    //@JoinColumn(name = "ITEM_ID")
     public List<Item> getItems() {
         return items;
     }

@@ -39,8 +39,7 @@ public class Invoice {
     public void setNumber(String number) {
         this.number = number;
     }
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,targetEntity = Item.class,mappedBy = "invoice")
-    @Column(name = "ITEMS")
+    @OneToMany(mappedBy = "invoice",targetEntity = Item.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<Item> getItems() {
         return items;
     }

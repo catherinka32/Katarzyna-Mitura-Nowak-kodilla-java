@@ -35,12 +35,13 @@ public class Item {
     public void setId(int id) {
         this.id = id;
     }
-    @Column(name = "PRODUCT")
+    @ManyToOne()
+    @JoinColumn (name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
     }
-    @ManyToOne()
-    @JoinColumn(name = "PRODUCT_ID")
+
+
     public void setProduct(Product product) {
         this.product = product;
     }
