@@ -28,6 +28,13 @@ public class InvoiceDaoTestSuite {
         Product product2 = new Product("Old Box");
         Product product3 = new Product("Big Wardrobe");
 
+        productDao. save(product1);
+        int idp1 = product1.getId();
+        productDao.save(product2);
+        int idp2 = product2.getId();
+        productDao.save(product3);
+        int idp3 = product3.getId();
+
         Item item1 = new Item(product1, new BigDecimal(20),7,new BigDecimal(700) );
         Item item2 = new Item(product1, new BigDecimal(13), 19, new BigDecimal(590));
         Item item3 = new Item(product3, new BigDecimal(290), 6, new BigDecimal(500));
@@ -67,6 +74,9 @@ public class InvoiceDaoTestSuite {
         //Then
         Assert.assertNotEquals(0,id );
         //CleanUp
-        //taskListDao.delete(id);
+        invoiceDao.delete(id);
+        productDao.delete(idp1);
+        productDao.delete(idp2);
+        productDao.delete(idp3);
     }
 }
