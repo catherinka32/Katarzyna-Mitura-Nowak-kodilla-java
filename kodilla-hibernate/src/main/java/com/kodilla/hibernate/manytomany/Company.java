@@ -4,6 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyWithFragment",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :ABC%"
+)
 
 @Entity
 @Table(name = "COMPANIES")
