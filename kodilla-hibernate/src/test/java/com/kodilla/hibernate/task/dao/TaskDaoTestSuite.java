@@ -51,7 +51,22 @@ public class TaskDaoTestSuite {
 
         //CleanUp
         int id = readTasks.get(0).getId();
+//        int id1 = readTasks.get(1).getId();
+//        int id2 = readTasks.get(2).getId();
+//        int id3 = readTasks.get(3).getId();
+//        int id4 = readTasks.get(4).getId();
+//        int id5 = readTasks.get(5).getId();
+//        int id6= readTasks.get(6).getId();
+//        int id7 = readTasks.get(7).getId();
         taskDao.delete(id);
+//        taskDao.delete(id1);
+//        taskDao.delete(id2);
+//        taskDao.delete(id3);
+//        taskDao.delete(id4);
+//        taskDao.delete(id5);
+//        taskDao.delete(id6);
+//        taskDao.delete(id7);
+
     }
 
     @Test
