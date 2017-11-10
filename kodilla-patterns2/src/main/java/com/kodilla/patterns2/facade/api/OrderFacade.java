@@ -4,11 +4,13 @@ import com.kodilla.patterns2.facade.ShopService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
 @Service
+@EnableAspectJAutoProxy
 public final class OrderFacade {
     @Autowired
     private ShopService shopService;
@@ -17,7 +19,7 @@ public final class OrderFacade {
     public void processOrder(final OrderDto order, final Long userId) throws OrderProcessingException{
         boolean wasError = false;
         Long orderId = shopService.openOrder(userId);
-        LOGGER.info("Registeration new order, Id: " + orderId);
+        LOGGER.info("Registration new order, Id: " + orderId);
         if(orderId < 0) {
             LOGGER.error(OrderProcessingException.ERR_NOT_AUTHORISED);
             //wasError = true;
