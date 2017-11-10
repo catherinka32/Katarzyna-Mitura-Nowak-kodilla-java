@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 
 @Service
-//@EnableAspectJAutoProxy
-public final class OrderFacade {
+@EnableAspectJAutoProxy
+public class OrderFacade {
     @Autowired
     private ShopService shopService;
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderFacade.class);
