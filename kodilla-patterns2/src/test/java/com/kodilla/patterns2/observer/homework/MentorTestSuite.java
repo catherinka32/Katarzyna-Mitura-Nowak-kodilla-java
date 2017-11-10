@@ -17,10 +17,10 @@ public class MentorTestSuite {
         haniaNovakTasks.registerObserver(giovanna);
         peterHankeTasks.registerObserver(trevor);
         //When
+        peterHankeTasks.addTask("Task 1.2");
         haniaNovakTasks.addTask("Task 1.1");
         haniaNovakTasks.addTask("Task 1.2");
         peterHankeTasks.addTask("Task 1.1");
-        peterHankeTasks.addTask("Task 1.2");
         peterHankeTasks.addTask("Task 1.3");
         peterHankeTasks.addTask("Task 1.4");
         //Then
