@@ -8,6 +8,10 @@ import java.util.List;
         name = "Company.retrieveCompanyWithFragment",
         query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :ABC%"
 )
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyWithABC",
+
+)
 
 @Entity
 @Table(name = "COMPANIES")
