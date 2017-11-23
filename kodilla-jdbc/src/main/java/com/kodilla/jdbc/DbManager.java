@@ -10,8 +10,8 @@ public class DbManager {
     private static DbManager dbManagerInstance;
 
     private DbManager() throws SQLException {
-        //DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
-        //Class.forName("com.mysql.jdbc.Driver").newInstance();
+//        DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
+//        Class.forName("com.mysql.jdbc.Driver").newInstance();
         Properties connectionProps = new Properties();
         connectionProps.put("user", "katarzyna");
         connectionProps.put("password", "fartoflinka72");
