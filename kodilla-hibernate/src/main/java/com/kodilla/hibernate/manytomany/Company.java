@@ -1,6 +1,4 @@
 package com.kodilla.hibernate.manytomany;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -10,7 +8,7 @@ import java.util.List;
 @Component
 @NamedNativeQuery(
         name = "Company.retrieveCompanyWithFragment",
-        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :ABC%"
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :ABC"
 )
 
 @Entity

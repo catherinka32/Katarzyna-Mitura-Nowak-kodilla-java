@@ -10,7 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -99,7 +102,7 @@ public class CompanyDaoTestSuite {
         //When
         List<Employee> withLastname = employeeDao.retrieveEmployeeWithLastname("Smith");
         //Then
-        Assert.assertEquals(1,withLastname.size());
+        assertEquals(1,withLastname.size());
         //CleanUp
         try {
             companyDao.delete(softwareMachineId);
@@ -140,7 +143,7 @@ public class CompanyDaoTestSuite {
         //When
          List<Company> resultList = companyDao.retrieveCompanyWithFragment("Sof%");
         //Then
-        Assert.assertEquals(1, resultList.size());
+        assertEquals(1, resultList.size());
         //CleanUp
         try {
             companyDao.delete(softwareMachineId);
@@ -151,6 +154,40 @@ public class CompanyDaoTestSuite {
         }
     }
     @Test
-    public void
+    public void testCompanyWithFacade(){
 
+        Company dataMasters = new Company("Data Maesters");
+        Company greyMatater = new Company("Grey Matater");
+        companyDao.save(dataMasters);
+        int dataMastersId = dataMasters.getId();
+        companyDao.save(greyMatater);
+        int greyMataterId = greyMatater.getId();
+        List<Company> resultList = facade.retrieveCompanyWithFragmentFacade("ta" );
+        System.out.println(resultList.size());
+        assertEquals(2, resultList.size());
+        try {
+            companyDao.delete(dataMastersId);
+            companyDao.delete(greyMataterId);
+        } catch (Exception e) {
+            //do nothing;
+        }
+    }
+    @Test
+    public void testEmployeeWithFragment(){
+        Employee johnSmithsky = new Employee("John", "Smithsky");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+        employeeDao.save(johnSmithsky);
+        int johnSmithskyId = johnSmithsky.getId();
+        employeeDao. save(lindaKovalsky);
+        int lindaKovalskyId = lindaKovalsky.getId();
+        List<Employee> resultList  = facade.retrieveEmployeeWithFragmentFacade("sky");
+        assertEquals(2, resultList.size());
+        try {
+            employeeDao.delete(johnSmithskyId);
+            employeeDao.delete(lindaKovalskyId);
+        }catch(Exception e){
+            //do nothing
+        }
+    }
 }
