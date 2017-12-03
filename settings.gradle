@@ -9,6 +9,5 @@ include 'kodilla-hibernate'
 include 'kodilla-spring'
 include 'kodilla-spring-web'
 include 'kodilla-spring-into'
-
-
+include 'kodilla-testing2'
 
