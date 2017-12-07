@@ -1,18 +1,16 @@
 package com.kodilla.testing2.crudapp;
 
-import com.kodilla.testing2.config.WebDriverConfig;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.Random;
-import java.util.stream.Collectors;
-
-import static org.junit.Assert.assertTrue;
+        import com.kodilla.testing2.config.WebDriverConfig;
+        import org.junit.After;
+        import org.junit.Before;
+        import org.junit.Test;
+        import org.openqa.selenium.By;
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.support.ui.Select;
+        import java.util.Random;
+        import java.util.stream.Collectors;
+        import static org.junit.Assert.assertTrue;
 
 public class CrudAppTestSuite {
     private static final String BASE_URL = "https://catherinka32.github.io/";
@@ -65,7 +63,7 @@ public class CrudAppTestSuite {
                 .forEach(theForm -> {
                     WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));
                     Select select = new Select(selectElement);
-                    select.selectByIndex(2);
+                    select.selectByIndex(1);
 
                     WebElement buttonCreateCard =
                             theForm.findElement(By.xpath(".//button[contains(@class, \"card-creation\")]"));
@@ -73,6 +71,7 @@ public class CrudAppTestSuite {
                 });
         Thread.sleep(5000);
     }
+
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
         final String TRELLO_URL = "https://trello.com/login";
         boolean result = false;
