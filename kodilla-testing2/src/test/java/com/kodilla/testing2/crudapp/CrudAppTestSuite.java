@@ -70,6 +70,7 @@ public class CrudAppTestSuite {
                     buttonCreateCard.click();
                 });
         Thread.sleep(5000);
+        driver.close();
     }
 
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
@@ -101,6 +102,9 @@ public class CrudAppTestSuite {
     }
 
     public void deleteCrudAppTestTask(String taskName) throws InterruptedException {
+        driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
+        driver.get(BASE_URL);
+        Thread.sleep(3000);
         driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
                 .filter(anyForm -> anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
                         .getText().equals(taskName))
@@ -108,7 +112,8 @@ public class CrudAppTestSuite {
                     WebElement buttonDeleteTask = theForm.findElement(By.xpath(".//button[4]"));
                     buttonDeleteTask.click();
                 });
-        Thread.sleep(2000);
+        Thread.sleep(3000);
+        driver.close();
     }
 
     @Test
